@@ -4,15 +4,14 @@
 
 using namespace std;
 
+// check whether a string only has unique characters
 bool unique_characters_in_string_check(string str)
 {
 	vector<bool> presented_flags(256, false);
 
 	for ( string::iterator iter = str.begin(); iter != str.end(); ++iter )
 	{
-		char c = *iter;
-
-		int idx = static_cast<int>(c);
+		int idx = *iter;
 
 		if ( presented_flags[idx] )
 			return false;
